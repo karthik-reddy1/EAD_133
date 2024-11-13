@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .Calculator {
+            border-radius: 10px;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            margin-block-start: 2em;
+            max-inline-size: 22rem;
+            overflow: hidden;
+        }
+
+        #display {
+            background: hsl(202, 11%, 29%);
+            color: hsl(255, 100%, 100%);
+            font-size: 2rem;
+            padding: 1rem;
+            text-align: right;
+            border: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .cal_key {
+            background: white;
+            border: none;
+            padding-block-start: 1rem;
+            padding-block-end: 1rem;
+            padding-inline-end: 1.25rem;
+            padding-inline-start: 1.25rem;
+            font-size: 1.5rem;
+            /* Playful Styles */
+            inline-size: 70px;
+            block-size: 70px;
+            margin: 0.25rem;
+            border-radius: 40px;
+        }
+
+        .cal_key--enter {
+            grid-column: 4 / 5;
+            /* Span the last column */
+            grid-row: 4 / 7;
+            background: hsl(357, 100%, 72%);
+            color: white;
+            height: 100%;
+            border-radius: 40px;
+        }
+
+        .cal__key--operator {
+            background: hsl(208, 25%, 86%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Calculator">
+        <form name="cal">
+            <input id="display" type="text" name="display" readonly><br>
+            <input class="cal_key cal_key--operator" type="button" value="+" onclick="cal.display.value += ' + '">
+            <input class="cal_key cal_key--operator" type="button" value="-" onclick="cal.display.value += ' - '">
+            <input class="cal_key cal_key--operator" type="button" value="x" onclick="cal.display.value += ' * '">
+            <input class="cal_key cal_key--operator" type="button" value="/" onclick="cal.display.value += ' / '"><br>
+
+            <input class="cal_key" type="button" value="7" onclick="cal.display.value += '7'">
+            <input class="cal_key" type="button" value="8" onclick="cal.display.value += '8'">
+            <input class="cal_key" type="button" value="9" onclick="cal.display.value += '9'"><br>
+
+            <input class="cal_key" type="button" value="4" onclick="cal.display.value += '4'">
+            <input class="cal_key" type="button" value="5" onclick="cal.display.value += '5'">
+            <input class="cal_key" type="button" value="6" onclick="cal.display.value += '6'"><br>
+
+            <input class="cal_key" type="button" value="1" onclick="cal.display.value += '1'">
+            <input class="cal_key" type="button" value="2" onclick="cal.display.value += '2'">
+            <input class="cal_key" type="button" value="3" onclick="cal.display.value += '3'"><br>
+
+            <input class="cal_key" type="button" value="AC" onclick="cal.display.value = ''">
+            <input class="cal_key" type="button" value="0" onclick="cal.display.value += '0'">
+            <input class="cal_key" type="button" value="." onclick="cal.display.value += '.'">
+            <input class="cal_key cal_key--enter" type="button" value="="
+                onclick="cal.display.value = eval(cal.display.value)">
+        </form>
+    </div>
+
+</body>
+
+</html>
